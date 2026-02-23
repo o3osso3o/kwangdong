@@ -716,7 +716,7 @@ section.product .more_btn {
    슬라이더 트랙 (핵심)
 ================================ */
 section.product .product_box {
-  width: 100vw;
+  /* width: 100vw; */
   margin-left: calc(50% - 50vw);
 
   padding-left: clamp(16px, 6vw, 120px);
