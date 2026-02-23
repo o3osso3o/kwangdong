@@ -20,20 +20,6 @@
 
 
 
-body {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
-
-body.no-scroll {
-  overflow: hidden;
-}
-
-.inner {
-  width: 100%;
-  max-width: 1740px;
-  margin-inline: auto;
-}
-
 /* main */
 main .hero {
   background: url("../img/main_hero.png") center/cover no-repeat;
@@ -152,15 +138,13 @@ main .hero .scroll i {
 
 
 
-/* ===== search section layout ===== */
+/* search */
 .search {
   padding: 170px 0 200px;
   background: #fff;
 }
 
 .search .inner {
-  width: min(1360px, calc(100% - 40px));
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -171,7 +155,6 @@ main .hero .scroll i {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  /* 아이콘과 컨텐츠 사이 간격 확대 */
 }
 
 .search .filter_list {
@@ -205,13 +188,13 @@ main .hero .scroll i {
 }
 
 
-/* 아이콘 원형 */
+
 .icon {
   width: 100px;
   height: 100px;
   border-radius: 70px;
   background: var(--kd_black);
-  /* 기본: 검정 */
+
   display: grid;
   place-items: center;
   color: var(--gray_00);
@@ -219,7 +202,6 @@ main .hero .scroll i {
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
 }
 
-/* active 상태(2번 이미지처럼 빨간 원) */
 .filter_item.is-active .icon {
   background: var(--kd_red);
 }
@@ -229,7 +211,7 @@ main .hero .scroll i {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
 }
 
-/* 텍스트 */
+
 .search .txt {
   font-size: 18px;
   line-height: 1.25;
@@ -237,16 +219,10 @@ main .hero .scroll i {
   color: var(--kd_black);
   text-align: center;
   white-space: nowrap;
-  /* 한 줄 유지 */
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* ===== (선택) 아이콘 안에 실제 그림 넣는 방법 =====
-   지금은 span.icon 안에 아무것도 없어서 비어 보일 수 있음.
-   가장 간단하게는 background-image로 아이콘 넣거나,
-   SVG를 span 안에 넣어도 됨. 아래는 임시 "기호" 방식(원하면 삭제)
-*/
 .icon::before {
   content: "•";
   font-size: 22px;
@@ -278,14 +254,11 @@ main .hero .scroll i {
 }
 
 
-/* 2번처럼 가로로 쭉 + 넘치면 스크롤(슬라이더 느낌) */
+
 .search .search_list {
   overflow-x: auto;
   padding: 6px 2px 30px;
-  /* 스크롤바 공간 확보를 위해 패딩 하단 조정 */
-
   scroll-snap-type: x mandatory;
-  /* 스크롤 스냅 */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -293,7 +266,6 @@ main .hero .scroll i {
   display: flex;
   gap: 40px;
   width: max-content;
-  /* 내부 아이템들의 너비만큼 확장 */
 }
 
 .search_list::-webkit-scrollbar {
@@ -312,7 +284,6 @@ main .hero .scroll i {
 
 .search_item {
   flex: 0 0 320px;
-  /* 카드 폭 고정 */
   scroll-snap-align: start;
 }
 
@@ -357,7 +328,6 @@ main .hero .scroll i {
 .card_hover {
   position: absolute;
   bottom: -80px;
-  /* 처음엔 숨김 */
   left: 0;
   width: 100%;
   display: flex;
@@ -383,12 +353,10 @@ main .hero .scroll i {
   border: 0;
 }
 
-/* hover 시 버튼 등장 */
 .card:hover .card_hover {
   bottom: 25px;
 }
 
-/* ===== bottom area ===== */
 .copy {
   display: flex;
   align-items: center;
@@ -412,7 +380,6 @@ main .hero .scroll i {
   line-height: 1.5;
 }
 
-/* 버튼 */
 .more_btn {
   display: inline-flex;
   align-items: center;
@@ -435,7 +402,7 @@ main .hero .scroll i {
   transform: translateY(-1px);
 }
 
-/* ===== responsive ===== */
+
 @media (max-width: 900px) {
   .filter_list {
     gap: 12px;
@@ -457,7 +424,7 @@ main .hero .scroll i {
 
 @media (max-width: 720px) {
 
-  /* 아이콘 필터 줄바꿈 */
+
   .filter_list {
     flex-wrap: wrap;
     justify-content: center;
@@ -467,7 +434,7 @@ main .hero .scroll i {
     flex: 0 0 calc(33.333% - 12px);
   }
 
-  /* 하단 카피/버튼 세로 스택 */
+
   .bottom {
     flex-direction: column;
     align-items: flex-start;
@@ -475,17 +442,12 @@ main .hero .scroll i {
 }
 
 
-/* ===== story section ===== */
+/* story */
 .story {
-  background: #f6f2ef;
-  /* 이미지 느낌의 따뜻한 배경 */
+  background: var(--beige_bg);
   padding: 200px 0 200px;
 }
 
-.story .inner {
-  width: min(1360px, calc(100% - 40px));
-  margin: 0 auto;
-}
 
 .story .txt {
   margin-bottom: 28px;
@@ -958,4 +920,123 @@ section.product .product_desc {
 .estimate .btn_link:hover {
   background: #c62828;
   transform: translateY(-2px);
+}
+
+/* =========================
+   LINK SECTION
+========================= */
+
+.link {
+  width: 100%;
+  border-top: 1px solid var(--kd_red);
+  border-bottom: 1px solid var(--kd_red);
+}
+
+.link .inner {
+  margin: 0 auto;
+}
+
+.link_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid var(--kd_red);
+  border-right: 1px solid var(--kd_red);
+}
+
+.link_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 120px;
+
+  background: var(--gray_00);
+  text-decoration: none;
+
+  border-right: 1px solid var(--kd_red);
+  overflow: hidden;
+  transform: none;
+}
+
+/* 마지막 칸 border-right 제거 */
+.link_item:last-child {
+  border-right: 0;
+}
+
+.link_in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: transform .22s ease;
+  will-change: transform;
+}
+
+
+.link_item:hover .link_in {
+  transform: scale(1.06);
+}
+
+
+.link_item img {
+  max-width: 70%;
+  max-height: 60%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 마지막 텍스트 카드 */
+.link_text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--kd_red);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+
+.link_item:last-child .link_text {
+  color: var(--kd_red);
+  transition: color .2s ease;
+}
+
+.link_item:last-child:hover {
+  background: var(--kd_red);
+}
+
+.link_item:last-child:hover .link_text {
+  color: var(--gray_00);
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .link_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .link_item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .link_item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .link_item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .link_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .link_item {
+    border-right: 0;
+  }
 }

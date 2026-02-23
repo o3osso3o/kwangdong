@@ -1,35 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector("header");
+  const header = document.querySelector(".header");
 
-  let lastScroll = 0;
-  const delta = 5;
+let lastScroll = window.scrollY;
+const delta = 5;
+const TOP = 10;
 
-  window.addEventListener("scroll", () => {
-    const current = window.scrollY;
+window.addEventListener("scroll", () => {
+  const current = window.scrollY;
 
-    // 맨 위에서는 항상 보이게
-    if (current <= 0) {
-      header.classList.remove("hide");
-      return;
-    }
-
-    // 작은 움직임은 무시
-    if (Math.abs(current - lastScroll) < delta) return;
-
-    if (current > lastScroll) {
-      // ↓ 아래로 스크롤
-      header.classList.add("hide");
-    } else {
-      // ↑ 위로 스크롤
-      header.classList.remove("hide");
-    }
-
+  if (current <= TOP) {
+    header.classList.remove("is-hidden");
+    header.classList.remove("is-scrolled");
     lastScroll = current;
-// 메뉴 영역에서 벗어나면 초기화
-    header.addEventListener("mouseleave", clearActive);
-  });
+    return;
+  }
 
-  const gnbItems = document.querySelectorAll(".gnb > li");
+  if (Math.abs(current - lastScroll) < delta) return;
+
+  if (current > lastScroll) {
+    header.classList.add("is-hidden");
+  } else {
+    header.classList.remove("is-hidden");
+    header.classList.add("is-scrolled");
+  }
+
+  lastScroll = current;
+}, { passive: true });
+
+// 메뉴 영역에서 벗어나면 초기화
+header.addEventListener("mouseleave", clearActive);
+
+const gnbItems = document.querySelectorAll(".gnb > li");
   const lnbList = document.querySelector(".lnb .list");
   const lnbCols = document.querySelectorAll(".lnb .list > li");
 
