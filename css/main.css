@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 18px;
+  --kd_red: #EF4023;
+  --kd_black: #1F2020;
+  --gray_00: #fff;
+  --beige_bg: #F5F2EF;
+  --bg-transparent: rgba(0, 0, 0, 0.00);
+  --round: 24px;
+}
+
+
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1740px;
+  margin-inline: auto;
+}
+
+/* main */
+main .hero {
+  background: url("../img/main_hero.png") center/cover no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 90px clamp(16px, 5vw, 120px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+main .hero .slogan {
+  width: min(1360px, 72%);
+  margin: 0 auto;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+}
+
+main .hero .slogan h2 {
+  font-size: clamp(32px, 4.2vw, 64px);
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: var(--gray_00);
+}
+
+main .hero .slogan h2 em {
+  font-weight: 700;
+}
+
+main .hero .slogan p {
+  font-size: clamp(18px, 2.4vw, 36px);
+  font-weight: 300;
+  color: var(--gray_00);
+}
+
+main .hero .hero_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: clamp(44px, 6vw, 60px);
+  width: fit-content;
+  max-width: 100%;
+  padding: 0 clamp(18px, 3vw, 40px);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--kd_black);
+  color: var(--kd_black);
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 500;
+}
+
+main .hero .hero_btn:hover {
+  background: var(--kd_red);
+  color: var(--gray_00);
+  border: 0;
+}
+
+main .hero .scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+main .hero .scroll p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gray_00);
+  animation: scrollLine 2s infinite ease-in-out;
+}
+
+main .hero .scroll i {
+  display: block;
+  width: 14px;
+  height: 8px;
+  color: var(--gray_00);
+  animation: scrollLine 2s infinite ease-in-out;
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(0);
+    opacity: .4;
+  }
+
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: .4;
+  }
+}
+
+@media (max-width: 768px) {
+  main .hero .slogan {
+    gap: 22px;
+  }
+
+  main .hero .scroll {
+    bottom: 16px;
+  }
+}
+
+
+
+/* ===== search section layout ===== */
+.search {
+  padding: 170px 0 200px;
+  background: #fff;
+}
+
+.search .inner {
+  width: min(1360px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+
+.search .filter {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  /* 아이콘과 컨텐츠 사이 간격 확대 */
+}
+
+.search .filter_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.filter_item {
+  flex: 1;
+  min-width: 0;
+}
+
+.search .filter_btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search .filter_btn:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+
+/* 아이콘 원형 */
+.icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 70px;
+  background: var(--kd_black);
+  /* 기본: 검정 */
+  display: grid;
+  place-items: center;
+  color: var(--gray_00);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+/* active 상태(2번 이미지처럼 빨간 원) */
+.filter_item.is-active .icon {
+  background: var(--kd_red);
+}
+
+.filter_btn:hover .icon {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+/* 텍스트 */
+.search .txt {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: var(--kd_black);
+  text-align: center;
+  white-space: nowrap;
+  /* 한 줄 유지 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== (선택) 아이콘 안에 실제 그림 넣는 방법 =====
+   지금은 span.icon 안에 아무것도 없어서 비어 보일 수 있음.
+   가장 간단하게는 background-image로 아이콘 넣거나,
+   SVG를 span 안에 넣어도 됨. 아래는 임시 "기호" 방식(원하면 삭제)
+*/
+.icon::before {
+  content: "•";
+  font-size: 22px;
+  opacity: .9;
+}
+
+.icon--wind::before {
+  content: "";
+}
+
+.icon--energy::before {
+  content: "⚡";
+}
+
+.icon--eye::before {
+  content: "◉";
+}
+
+.icon--spark::before {
+  content: "✦";
+}
+
+.icon--muscle::before {
+  content: "✚";
+}
+
+.icon--pulse::before {
+  content: "⌁";
+}
+
+
+/* 2번처럼 가로로 쭉 + 넘치면 스크롤(슬라이더 느낌) */
+.search .search_list {
+  overflow-x: auto;
+  padding: 6px 2px 30px;
+  /* 스크롤바 공간 확보를 위해 패딩 하단 조정 */
+
+  scroll-snap-type: x mandatory;
+  /* 스크롤 스냅 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.search_box {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  /* 내부 아이템들의 너비만큼 확장 */
+}
+
+.search_list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.search_list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+}
+
+.search_list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 999px;
+}
+
+.search_item {
+  flex: 0 0 220px;
+  /* 카드 폭 고정 */
+  scroll-snap-align: start;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform .3s ease;
+}
+
+.card:hover .card_img {
+  transform: translateY(-20px);
+}
+
+.card_img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.card_hover {
+  position: absolute;
+  bottom: -80px;
+  /* 처음엔 숨김 */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: bottom .3s ease;
+}
+
+.buy_btn {
+  height: 46px;
+  padding: 0 28px;
+  border-radius: 999px;
+  border: 1.5px solid #111;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.buy_btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* hover 시 버튼 등장 */
+.card:hover .card_hover {
+  bottom: 25px;
+}
+
+/* ===== bottom area ===== */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.copy .title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.copy .desc {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+  line-height: 1.5;
+}
+
+/* 버튼 */
+.more_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background .15s ease, transform .15s ease;
+}
+
+.more_btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+/* ===== responsive ===== */
+@media (max-width: 900px) {
+  .filter_list {
+    gap: 12px;
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .txt {
+    font-size: 12px;
+  }
+
+  .product_item {
+    flex-basis: 200px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  /* 아이콘 필터 줄바꿈 */
+  .filter_list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter_item {
+    flex: 0 0 calc(33.333% - 12px);
+  }
+
+  /* 하단 카피/버튼 세로 스택 */
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

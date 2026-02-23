@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 18px;
+  --kd_red: #EF4023;
+  --kd_black: #1F2020;
+  --gray_00: #fff;
+  --beige_bg: #F5F2EF;
+  --bg-transparent: rgba(0, 0, 0, 0.00);
+  --round: 24px;
+}
+
+
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1740px;
+  margin-inline: auto;
+}
+
+/* ===== Header Wrapper ===== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+header:hover {
+  backdrop-filter: blur(12px) saturate(140%);
+  /* 블러 + 채도 */
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  /* 유리 하이라이트/경계 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  /* 살짝 뜨는 그림자 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition: background .2s ease, backdrop-filter .2s ease;
+}
+
+header .inner {
+  width: 1790px;
+  height: 80px;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   GNB
+========================= */
+
+.gnb {
+  display: flex;
+  gap: 70px;
+}
+
+.gnb>li>a {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   우측 영역
+========================= */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.right a {
+  color: var(--gray_00);
+  font-size: 16px;
+  padding-right: 9px;
+  font-weight: 300;
+  border-right: 1px solid var(--gray_00);
+}
+
+.right a:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* =========================
+   LNB (전체 드롭다운)
+========================= */
+
+.lnb {
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 100%;
+  background: var(--gray_00);
+  /* 닫힘 */
+  max-height: 0;
+  overflow: hidden;
+  /* 기본은 숨김 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* hover 시 전체 메뉴 표시 */
+header:hover .lnb {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  max-height: 500px;
+  /* 대실 내용물의 높이보다 넉넉하게 설정 */
+}
+
+.lnb .inner {
+  width: min(1120px, calc(100% - 40px));
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.lnb .list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.lnb .list>li {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  transition: background .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.lnb .list.is-dim>li {
+  opacity: .45;
+}
+
+.lnb .list.is-dim>li.is-active {
+  opacity: 1;
+}
+
+.lnb .list>li.is-active {
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.lnb .title {
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--kd_black);
+}
+
+.lnb .list>li.is-active .title {
+  color: var(--kd_red);
+}
+
+.lnb .list>li.is-active .sub a {
+  color: var(--kd_black);
+}
+
+.lnb .sub li a {
+  display: block;
+  font-size: 16px;
+  padding: 10px 0;
+  color: #444;
+}
+
+.lnb .title .desc {
+  font-size: 16px;
+  color: var(--kd_black);
+  font-weight: 400;
+  display: block;
+  margin-top: 10px;
+}
+
+.lnb .sub li a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   스크롤 시 숨김
+========================= */
+
+header.hide {
+  transform: translateY(-100%);
+}
