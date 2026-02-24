@@ -22,7 +22,6 @@
 
 /* main */
 main .hero {
-  background: url("../img/main_hero.png") center/cover no-repeat;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -32,6 +31,16 @@ main .hero {
   position: relative;
   align-items: center;
   justify-content: center;
+}
+
+.hero_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 main .hero .inner {
@@ -45,7 +54,7 @@ main .hero .inner {
 main .hero .slogan {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 20px;
 }
 
 main .hero .slogan h2 {
@@ -346,13 +355,13 @@ main .hero .scroll i {
 .story .inner {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 200px;
 }
 
 .story_con {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 100px;
 }
 
 .story_con .story_box {
@@ -430,9 +439,16 @@ main .hero .scroll i {
   object-fit: cover;
   display: block;
   transform: scale(1.02);
-  transition: transform .35s ease;
+  transition: transform .35s ease, filter .25s ease;
 }
 
+.story_card:hover img {
+  filter: brightness(0.75);
+}
+
+.story_card:nth-child(2):hover img {
+  filter: none;
+}
 
 .story_band {
   position: absolute;
@@ -455,6 +471,10 @@ main .hero .scroll i {
 }
 
 
+.story_card:hover .story_band {
+  opacity: 1;
+}
+
 .story_title {
   margin: 0;
   font-size: 25px;
@@ -464,10 +484,7 @@ main .hero .scroll i {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: flex;
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -475,18 +492,10 @@ main .hero .scroll i {
   transform: scale(1.06);
 }
 
-
-
+.stoty_card:hover .overlay,
 .story_card:hover .story_band {
   opacity: 1;
 }
-
-/* 키보드 포커스 시도 동일하게 */
-.story_card:focus-visible {
-  outline: 3px solid rgba(229, 57, 53, 0.55);
-  outline-offset: 4px;
-}
-
 
 
 
@@ -512,8 +521,14 @@ main .hero .scroll i {
   perspective: 1200px;
 }
 
+.slide_wrap {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+}
 
-.product_box {
+.swiper-wrapper {
   display: flex;
   gap: 40px;
   will-change: transform;
@@ -521,12 +536,9 @@ main .hero .scroll i {
 
 }
 
-
-
-
-.product_card {
-  flex: 0 0 70%;
-  max-width: 560px;
+.swiper-slide {
+  flex: 0 0 25%;
+  max-width: 600px;
   border-radius: 12px;
   overflow: hidden;
   transform: translateY(0) scale(.8);
@@ -538,31 +550,30 @@ main .hero .scroll i {
   box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
 }
 
-.product_card.is-active {
+.swiper-slide.is-active {
   transform: translateY(-20px) scale(1);
   opacity: 1;
 }
 
 
-/* 이미지/텍스트는 원하는대로 */
-.product_card img {
+.swiper-slide img {
   width: 100%;
-  height: 320px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.product_txt {
+.swiper-slide .product_txt {
   padding: 18px 20px 22px;
 }
 
-.product_title {
+.swiper-slide .product_title {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 8px;
 }
 
-.product_desc {
+.swiper-slide .product_desc {
   font-size: 14px;
   line-height: 1.5;
   margin: 0;

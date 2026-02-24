@@ -125,6 +125,7 @@
     </header>
     <main>
       <section class="hero">
+        <video src="./img/main_hero.mp4" autoplay muted loop playsinline class="hero_video"></video>
         <div class="inner">
           <div class="slogan">
             <h2>우리는 <em>더 건강한 내일</em>을 만듭니다</h2>
@@ -289,10 +290,9 @@
                 <a class="btn">더 알아보기<i class="bx bx-arrow-right-stroke"></i></a>
               </div>
             </div>
-            <div class="story_grid">
+            <div class="story_grid" data-aos="fade-up">
               <a class="story_card" href="#" data-title="옥수수수염차 Light 출시" aria-label="옥수수수염차 Light 출시">
                 <img src="./img/story02.png" alt="옥수수수염차 Light 출시">
-                <div class="story_overlay"></div>
                 <div class="story_band">
                   <p class="story_title">옥수수수염차 Light 출시 완료!</p>
                 </div>
@@ -300,7 +300,6 @@
 
               <a class="story_card" href="#" data-title="따뜻한 동행 캠페인" aria-label="따뜻한 동행 캠페인">
                 <img src="./img/story03.png" alt="따뜻한 동행 캠페인">
-                <div class="story_overlay"></div>
                 <div class="story_band">
                   <p class="story_title">락손정 환자 지원 프로그램</p>
                 </div>
@@ -308,7 +307,6 @@
 
               <a class="story_card" href="#" data-title="연구개발 R&D 스토리" aria-label="연구개발 R&D 스토리">
                 <img src="./img/story04.png" alt="연구개발 R&D 스토리">
-                <div class="story_overlay"></div>
                 <div class="story_band">
                   <p class="story_title">광동제약, '아동 행복 위원회' 후원</p>
                 </div>
@@ -316,7 +314,6 @@
 
               <a class="story_card" href="#" data-title="프로모션/이벤트 소식" aria-label="프로모션/이벤트 소식">
                 <img src="./img/story05.png" alt="프로모션/이벤트 소식">
-                <div class="story_overlay"></div>
                 <div class="story_band">
                   <p class="story_title">강남경찰서와 음주운전 예방 캠페인</p>
                 </div>
@@ -342,40 +339,58 @@
               </a>
             </div><!-- //.more -->
           </div><!-- //.copy -->
-          <div class="product_slider">
-
-            <div class="product_box">
-              <div class="product_card">
-                <img src="./img/product01.png" alt="광동 비타500">
+          <div class="product_swiper slide_wrap">
+            <div class="product_box swiper-wrapper">
+              <div class="product_card swiper-slide"> <img src="./img/product01.png" alt="광동 비타500">
                 <div class="product_txt">
                   <p class="product_title">광동 비타500</p>
                   <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
                 </div>
               </div>
-              <div class="product_card">
-                <img src="./img/product02.png" alt="광동 옥수수수염차">
+              <div class="product_card swiper-slide"> <img src="./img/product02.png" alt="광동 옥수수수염차">
                 <div class="product_txt">
                   <p class="product_title">광동 옥수수수염차</p>
                   <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
                 </div>
               </div>
-              <div class="product_card">
-                <img src="./img/product03.png" alt="광동 경옥고">
+              <div class="product_card swiper-slide"> <img src="./img/product03.png" alt="광동 경옥고">
                 <div class="product_txt">
                   <p class="product_title">광동 경옥고</p>
                   <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
                 </div>
               </div>
-              <div class="product_card">
-                <img src="./img/product04.png" alt="광동 삼다수">
+              <div class="product_card swiper-slide"> <img src="./img/product04.png" alt="광동 삼다수">
+                <div class="product_txt">
+                  <p class="product_title">광동 삼다수</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card swiper-slide"> <img src="./img/product01.png" alt="광동 비타500">
+                <div class="product_txt">
+                  <p class="product_title">광동 비타500</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card swiper-slide"> <img src="./img/product02.png" alt="광동 옥수수수염차">
+                <div class="product_txt">
+                  <p class="product_title">광동 옥수수수염차</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card swiper-slide"> <img src="./img/product03.png" alt="광동 경옥고">
+                <div class="product_txt">
+                  <p class="product_title">광동 경옥고</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card swiper-slide"> <img src="./img/product04.png" alt="광동 삼다수">
                 <div class="product_txt">
                   <p class="product_title">광동 삼다수</p>
                   <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
                 </div>
               </div>
             </div>
-
-          </div>
+          </div><!-- //.product_slider -->
         </div><!-- //.inner -->
       </section>
       <section class="banner">
