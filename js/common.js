@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const header = document.querySelector(".header");
 
 let lastScroll = window.scrollY;

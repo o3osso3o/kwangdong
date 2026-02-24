@@ -9,6 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <title>Kwangdong</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <!-- Basic Icons -->
 <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
@@ -17,16 +20,16 @@
 <!-- Brand Icons -->
 <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
 <!-- aos 또는 gsap -->
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/common_media.css">
-<link rel="stylesheet" href="css/main_style.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/common_media.css">
+<link rel="stylesheet" href="./css/main.css">
 <!-- 내 css -->
-<link rel="stylesheet" href="css/main_media.css">
+<link rel="stylesheet" href="./css/main_media.css">
 <!-- 내 media css -->
 
-<script src="js/common.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/main.js"></script>
 <!-- 내 js -->
 
 </head>
@@ -120,15 +123,17 @@
     </header>
     <main>
       <section class="hero">
-        <div class="slogan">
-          <h2>우리는 <em>더 건강한 내일</em>을 만듭니다</h2>
-          <p>광동제약의 새로운 가치</p>
+        <div class="inner">
+          <div class="slogan">
+            <h2>우리는 <em>더 건강한 내일</em>을 만듭니다</h2>
+            <p>광동제약의 새로운 가치</p>
+          </div><!-- //.slogan -->
           <a href="#" class="hero_btn">지금 필요한 제품 찾기 <i class="bx bx-arrow-right-stroke"></i></a>
-        </div><!-- //.slogan -->
-        <div class="scroll">
-          <p>Scroll</p>
-          <i class="bx bx-chevron-down"></i>
-        </div>
+          <div class="scroll">
+            <p>Scroll</p>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </div><!-- //.inner -->
       </section>
       <section class="search">
         <div class="inner">
@@ -136,122 +141,123 @@
             <ul class="filter_list">
               <li class="filter_item">
                 <button class="filter_btn">
-                  <span class="icon icon--wind"></span>
+                  <span class="icon"><img src="./img/icon01.png" alt="감기"></span>
                   <span class="txt">감기 걸린 것 같아요!</span>
                 </button>
               </li>
               <li class="filter_item is-active">
                 <button class="filter_btn">
-                  <span class="icon icon--energy"></span>
+                  <span class="icon"><img src="./img/icon02.png" alt="피로"></span>
                   <span class="txt">피로 회복이 필요해요!</span>
                 </button>
               </li>
               <li class="filter_item">
                 <button class="filter_btn">
-                  <span class="icon icon--eye"></span>
+                  <span class="icon"><img src="./img/icon03.png" alt="눈 건조"></span>
                   <span class="txt">눈이 건조해요!</span>
                 </button>
               </li>
               <li class="filter_item">
                 <button class="filter_btn">
-                  <span class="icon icon--spark"></span>
+                  <span class="icon"><img src="./img/icon04.png" alt="뾰루지"></span>
                   <span class="txt">뾰루지가 걱정이에요!</span>
                 </button>
               </li>
               <li class="filter_item">
                 <button class="filter_btn">
-                  <span class="icon icon--muscle"></span>
+                  <span class="icon"><img src="./img/icon05.png" alt="체한"></span>
                   <span class="txt">체한 것 같아요!</span>
                 </button>
               </li>
               <li class="filter_item">
                 <button class="filter_btn">
-                  <span class="icon icon--pulse"></span>
+                  <span class="icon"><img src="./img/icon06.png" alt="눈 떨림"></span>
                   <span class="txt">눈 밑 떨림이 있어요!</span>
                 </button>
               </li>
             </ul>
-            <div class="search_list">
-              <ul class="search_box">
-                <li class="search_item">
+            <div class="search_list swiper mySearchSwiper">
+              <ul class="search_box swiper-wrapper">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search01.png" alt="비타500">
                     </div>
                     <div class="card_hover">
-                      <button class="buy_btn">구매하기 →</button>
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
 
-                <li class="search_item">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search02.png" alt="비타오백제로">
-                      <div class="card_hover">
-                        <button class="buy_btn">구매하기 →</button>
-                      </div>
+                    </div>
+                    <div class="card_hover">
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
 
-                <li class="search_item">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search03.png" alt="타우린">
-                      <div class="card_hover">
-                        <button class="buy_btn">구매하기 →</button>
-                      </div>
+                    </div>
+                    <div class="card_hover">
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
 
-                <li class="search_item">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search04.png" alt="파워샷">
-                      <div class="card_hover">
-                        <button class="buy_btn">구매하기 →</button>
-                      </div>
+                    </div>
+                    <div class="card_hover">
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
 
-                <li class="search_item">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search05.png" alt="가네스듀얼샷">
-                      <div class="card_hover">
-                        <button class="buy_btn">구매하기 →</button>
-                      </div>
+                    </div>
+                    <div class="card_hover">
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
-                <li class="search_item">
+                <li class="search_item swiper-slide">
                   <a href="#" class="card">
                     <div class="card_img">
                       <img src="./img/search06.png" alt="마이비젯정">
-                      <div class="card_hover">
-                        <button class="buy_btn">구매하기 →</button>
-                      </div>
+                    </div>
+                    <div class="card_hover">
+                      <button class="buy_btn">구매하기<i class="bx bx-arrow-right-stroke"></i></button>
                     </div>
                   </a>
                 </li>
               </ul>
+              <div class="swiper-scrollbar"></div>
             </div>
           </div>
           <div class="copy">
-            <div class="txt">
-              <h2 class="title">
+            <div class="section_head">
+              <h2 class="section_title">
                 이럴 땐? - 지금 내게 맞는 제품 빠르게 찾기
               </h2>
-              <p class="desc">
+              <p class="section_desc">
                 우리의 일상과 함께하는 광동제약 / 광동제약의 다양한 제품을 소개합니다.
               </p>
             </div>
 
             <div class="more">
-              <a href="#" class="more_btn">
+              <a href="#" class="btn">
                 더 알아보기 <i class="bx bx-arrow-right-stroke"></i>
               </a>
             </div><!-- //.more -->
@@ -260,27 +266,26 @@
       </section>
       <section class="story">
         <div class="inner">
-          <div class="txt">
-            <h2 class="title">
+          <div class="section_head">
+            <h2 class="section_title">
               광동제약의 최근 이야기
             </h2>
-            <p class="desc">
+            <p class="section_desc">
               우리의 일상과 스며드는 광동제약 / 광동제약의 최근 소식을 전합니다.
             </p>
-          </div><!-- //.txt -->
-          <div class="story_box">
-            <div class="story">
-              <img src="./img/article01.png" alt="광동제약의 최근 이야기">
-              <div class="article_txt">
-                <p class="date">2026.02.22</p>
-                <h3 class="title">판권 보유 노안치료제 美 FDA 승인 '상한가'</h3>
-                <p class="desc">광동제약(009290)이 국내 독점 판권을 보유한 노안 치료제 '유베지'의 미국 식품의약국(FDA) 승인 획득 소식에 힘입어 상한가를 보이고 있다. 앞서
-                  광동제약은 지난 13일 글로벌 바이오기업 텐포인트 테라퓨틱스가 개발한 신약 '유베지'가 미국 FDA 승인을 획득했다고 발표했다.</p>
+          </div><!-- //.section_head -->
+          <div class="story_con">
+            <div class="story_box">
+              <img src="./img/story01.png" alt="광동제약의 최근 이야기">
+              <div class="story01_txt">
+                <h3 class="story01_title">판권 보유 노안치료제 美 FDA 승인 '상한가'</h3>
+                <p class="story01_desc">광동제약(009290)이 국내 독점 판권을 보유한 노안 치료제 '유베지'의 미국 식품의약국(FDA) 승인 획득 소식에 힘입어 상한가를 보이고
+                  있다. 앞서
+                  광동제약은 지난 13일 글로벌 바이오기업 텐포인트 테라퓨틱스가 개발한 신약 '유베지'가 미국 FDA 승인을 획득했다고 발표했다.
+                  <br><span>2026.02.22</span>
+                </p>
+                <a class="btn">더 알아보기<i class="bx bx-arrow-right-stroke"></i></a>
               </div>
-              <div class="story_hover">
-                <button class="more_btn">더 알아보기 →</button>
-              </div>
-
             </div>
             <div class="story_grid">
               <a class="story_card" href="#" data-title="옥수수수염차 Light 출시" aria-label="옥수수수염차 Light 출시">
@@ -295,7 +300,7 @@
                 <img src="./img/story03.png" alt="따뜻한 동행 캠페인">
                 <div class="story_overlay"></div>
                 <div class="story_band">
-                  <p class="story_title">광동제약, '아동 행복 위원회' 후원</p>
+                  <p class="story_title">락손정 환자 지원 프로그램</p>
                 </div>
               </a>
 
@@ -303,7 +308,7 @@
                 <img src="./img/story04.png" alt="연구개발 R&D 스토리">
                 <div class="story_overlay"></div>
                 <div class="story_band">
-                  <p class="story_title">락손정 환자 지원 프로그램</p>
+                  <p class="story_title">광동제약, '아동 행복 위원회' 후원</p>
                 </div>
               </a>
 
@@ -320,61 +325,79 @@
       </section>
       <section class="product">
         <div class="inner">
-          <div class="txt">
-            <h2 class="title">
-              광동제약의 베스트셀러
-            </h2>
-            <p class="desc">
-              오랜 시간 사랑 받은 광동제약의 비제약 상품들을 소개합니다.
-            </p>
+          <div class="copy">
+            <div class="section_head">
+              <h2 class="section_title">
+                광동제약의 베스트셀러
+              </h2>
+              <p class="section_desc">
+                오랜 시간 사랑 받은 광동제약의 비제약 상품들을 소개합니다.
+              </p>
+            </div><!-- //.section_head -->
             <div class="more">
-              <a href="#" class="more_btn">
+              <a href="#" class="btn">
                 더 알아보기 <i class="bx bx-arrow-right-stroke"></i>
               </a>
             </div><!-- //.more -->
-          </div><!-- //.txt -->
-          <div class="product_box">
-            <div class="product_card">
-              <img src="./img/product01.png" alt="광동 비타500">
-              <div class="product_txt">
-                <p class="product_title">광동 비타500</p>
-                <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+          </div><!-- //.copy -->
+          <div class="product_slider">
+
+            <div class="product_box">
+              <div class="product_card">
+                <img src="./img/product01.png" alt="광동 비타500">
+                <div class="product_txt">
+                  <p class="product_title">광동 비타500</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card">
+                <img src="./img/product02.png" alt="광동 옥수수수염차">
+                <div class="product_txt">
+                  <p class="product_title">광동 옥수수수염차</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card">
+                <img src="./img/product03.png" alt="광동 경옥고">
+                <div class="product_txt">
+                  <p class="product_title">광동 경옥고</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
+              </div>
+              <div class="product_card">
+                <img src="./img/product04.png" alt="광동 삼다수">
+                <div class="product_txt">
+                  <p class="product_title">광동 삼다수</p>
+                  <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
+                </div>
               </div>
             </div>
-            <div class="product_card">
-              <img src="./img/product02.png" alt="광동 옥수수수염차">
-              <div class="product_txt">
-                <p class="product_title">광동 옥수수수염차</p>
-                <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
-              </div>
-            </div>
-            <div class="product_card">
-              <img src="./img/product03.png" alt="광동 경옥고">
-              <div class="product_txt">
-                <p class="product_title">광동 경옥고</p>
-                <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
-              </div>
-            </div>
-            <div class="product_card">
-              <img src="./img/product04.png" alt="광동 삼다수">
-              <div class="product_txt">
-                <p class="product_title">광동 삼다수</p>
-                <p class="product_desc">1963년부터 이어온 정통의 힘, 광동 쌍화탕</p>
-              </div>
-            </div>
+
           </div>
         </div><!-- //.inner -->
       </section>
-      <section class="estimate">
+      <section class="banner">
         <div class="inner">
-          <div class="box">
-            <div class="txt">
-              <h2 class="title">[ 단체 · 기업 · 대량 구매 ] 견적 알아보기</h2>
-              <p class="desc">
-                더욱 더 쉽고 편하게 만나는 광동제약 / 광동제약의 새로운 서비스를 만나보세요.
+          <div class="box01">
+            <div class="section_head">
+              <h2 class="section_title">대량 구매 견적 알아보기</h2>
+              <p class="section_desc">
+                더욱 더 쉽고 편하게 만나는 광동제약의 새로운 서비스를 만나보세요.
               </p>
             </div>
-
+            <div class="btn">
+              <a href="#" class="btn_link">
+                더 알아보기 <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+          <div class="box02">
+            <div class="section_head">
+              <h2 class="section_title">광동제약 정기구독 바로가기</h2>
+              <p class="section_desc">
+                매달 챙기는 건강, 광동 정기구독 서비스가 시작되었습니다.
+              </p>
+            </div>
             <div class="btn">
               <a href="#" class="btn_link">
                 더 알아보기 <span class="arrow">→</span>
@@ -383,42 +406,8 @@
           </div>
         </div>
       </section>
-      <section class="link">
-        <div class="inner">
-          <div class="link_grid">
-
-            <a class="link_item" href="#" aria-label="광동생활건강 바로가기">
-              <div class="link_in">
-                <img src="./img/link01.png" alt="광동생활건강">
-              </div>
-            </a>
-
-            <a class="link_item" href="#" aria-label="광동상회 바로가기">
-              <div class="link_in">
-                <img src="./img/link02.png" alt="광동상회">
-              </div>
-            </a>
-            <a class="link_item" href="#" aria-label="네이버 공식 스토어 광동제약 바로가기">
-              <div class="link_in">
-                <img src="./img/link03.png" alt="네이버 공식 스토어 광동제약">
-              </div>
-            </a>
-            <a class="link_item" href="#" aria-label="광동제약 정기구독 바로가기">
-              <div class="link_in">
-                <p class="link_text">
-                  광동제약 정기구독<br>바로가기
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
     <footer class="footer">
-
-      <!-- =========================
-       TOP
-  ========================== -->
       <div class="top">
         <div class="inner">
 
@@ -426,27 +415,25 @@
             <p>경기도 과천시 과천대로7길 52, (갈현동) 광동 과천타워</p>
             <p>대표전화 02-6006-7777</p>
           </div>
-
           <div class="sns">
-            <a href="#" aria-label="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" aria-label="youtube"><i class="bx bxl-youtube"></i></a>
-            <a href="#" aria-label="facebook"><i class="bx bxl-facebook-circle"></i></a>
+            <a href="#" aria-label="instagram"><i class="bxl bx-instagram"></i></a>
+            <a href="#" aria-label="youtube"><i class="bxl bx-youtube"></i></a>
+            <a href="#" aria-label="facebook"><i class="bxl bx-facebook-circle"></i></a>
           </div>
-
           <div class="site">
             <button class="site_btn" type="button" aria-haspopup="true" aria-expanded="false">
               패밀리 사이트 <span class="arrow" aria-hidden="true">+</span>
             </button>
-
             <div class="site_menu" role="menu" aria-label="패밀리 사이트">
               <a role="menuitem" href="#">광동상회</a>
               <a role="menuitem" href="#">광동병원</a>
               <a role="menuitem" href="#">KD케어몰</a>
-              <a role="menuitem" href="#">코리아이플랫폼</a>
               <a role="menuitem" href="#">광동약국몰</a>
+              <a role="menuitem" href="#">광동생활건강</a>
+              <a role="menuitem" href="#">코리아이플랫폼</a>
+              <a role="menuitem" href="#">네이버공식스토어</a>
             </div>
           </div>
-
           <ul class="footer_policy">
             <li><a href="#">이용안내</a></li>
             <li><a href="#">이메일무단수집거부</a></li>
@@ -454,28 +441,18 @@
             <li><a href="#">영상정보처리기기 운영 · 관리 방침</a></li>
             <li><a href="#">공개채용</a></li>
           </ul>
-
         </div>
       </div>
-
-
-      <!-- =========================
-       BOTTOM
-  ========================== -->
       <div class="bottom">
         <div class="inner">
-
           <div class="copyright">
             COPYRIGHT(C) KWANG DONG PHARMACEUTICAL CO., LTD. ALL RIGHTS RESERVED
           </div>
-
           <div class="logo">
-            <img src="./img/logo_white.png" alt="Kwangdong">
+            <a href="#"><img src="./img/logo_white.png" alt="Kwangdong"></a>
           </div>
-
         </div>
       </div>
-
     </footer>
   </div><!-- //.wrap -->
 </body>
