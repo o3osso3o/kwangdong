@@ -293,7 +293,7 @@ main .hero .scroll i {
 
 .buy_btn {
   height: 46px;
-  padding: 15px 15px;
+  padding: 15px 20px;
   border-radius: 999px;
   border: 1.5px solid var(--kd_black);
   background: rgba(255, 255, 255, 0.5);
@@ -531,6 +531,7 @@ main .hero .scroll i {
 .product_swiper {
   display: flex;
   gap: 40px;
+  padding: 20px 0;
   will-change: transform;
   transition: transform 450ms cubic-bezier(.22, .8, .2, 1);
 

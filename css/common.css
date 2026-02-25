@@ -126,13 +126,13 @@ body.no-scroll {
 
 .gnb {
   display: flex;
-  gap: 70px;
+  gap: 90px;
 }
 
 .gnb>li>a {
   color: #fff;
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 
@@ -181,7 +181,7 @@ header:hover .lnb {
 }
 
 .lnb .inner {
-  width: min(1120px, calc(100% - 40px));
+  width: min(1000px, calc(100% - 40px));
   height: auto;
   display: block;
   margin: 0 auto;
@@ -197,14 +197,14 @@ header:hover .lnb {
 
 .lnb .list>li {
   flex: 1;
-  min-width: 0;
+  max-width: 140px;
   padding: 10px 12px;
-  border-radius: 14px;
+  border-radius: 12px;
   transition: background .15s ease, box-shadow .15s ease, opacity .15s ease;
 }
 
 .lnb .list.is-dim>li {
-  opacity: .45;
+  opacity: .5;
 }
 
 .lnb .list.is-dim>li.is-active {
@@ -214,7 +214,7 @@ header:hover .lnb {
 
 .lnb .title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   margin-bottom: 20px;
   color: var(--kd_black);
