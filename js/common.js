@@ -58,4 +58,30 @@ const gnbItems = document.querySelectorAll(".gnb > li");
   });
 
 
+  const familyWrap = document.querySelector('.footer .site');
+  const familyBtn  = document.querySelector('.footer .site_btn');
+
+  if (familyWrap && familyBtn) {
+    const setOpen = (open) => {
+      familyWrap.classList.toggle('is-open', open);
+      familyBtn.setAttribute('aria-expanded', String(open));
+    };
+
+    familyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = familyWrap.classList.contains('is-open');
+      setOpen(!isOpen);
+    });
+
+    // 바깥 클릭 시 닫기
+    document.addEventListener('click', (e) => {
+      if (!familyWrap.contains(e.target)) setOpen(false);
+    });
+
+    // ESC 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  }
+
 }); /// dom end (dom은 하나만!)

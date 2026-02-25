@@ -39,14 +39,14 @@ if (video) {
   const productSlide = new Swiper(".product .product_swiper", {
   loop: true,
   slidesPerView: "auto", // 아이템 너비만큼 자연 흐름
-  spaceBetween: 30,
-  speed: 9000, // 전체 트랙이 한번 도는 시간(느리게=크게)
+  spaceBetween: 40,
+  speed: 20000, // 전체 트랙이 한번 도는 시간(느리게=크게)
   autoplay: {
     delay: 0,
     disableOnInteraction: false,
     pauseOnmouseEnter: false, // 마우스 올려도 안 멈추게
   },
-  loopAdditionalSlides: 5, // 루프 시 빈틈 방지
+  loopAdditionalSlides: 4, // 루프 시 빈틈 방지
   on: {
     init: function () {
       this.wrapperEl.style.transitionTimingFunction = "linear";
