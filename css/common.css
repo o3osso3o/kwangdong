@@ -57,6 +57,12 @@ body.no-scroll {
     color .2s;
 }
 
+.btn svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 /* hover 공통 */
 .btn:hover {
   background: var(--kd_red);

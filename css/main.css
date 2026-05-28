@@ -90,6 +90,12 @@ main .hero .hero_btn {
   font-weight: 500;
 }
 
+main .hero .hero_btn svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
 main .hero .hero_btn:hover {
   background: var(--kd_red);
   color: var(--gray_00);
@@ -99,7 +105,7 @@ main .hero .hero_btn:hover {
 main .hero .scroll {
   position: absolute;
   left: 50%;
-  bottom: 24px;
+  bottom: 33px;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -115,10 +121,8 @@ main .hero .scroll p {
   animation: scrollLine 2s infinite ease-in-out;
 }
 
-main .hero .scroll i {
+main .hero .scroll svg {
   display: block;
-  width: 14px;
-  height: 8px;
   color: var(--gray_00);
   animation: scrollLine 2s infinite ease-in-out;
 }
@@ -308,6 +312,11 @@ main .hero .scroll i {
   transition: background .2s ease, color .2s ease;
 }
 
+.buy_btn svg {
+  flex-shrink: 0;
+  display: block;
+}
+
 .buy_btn:hover {
   background: var(--kd_black);
   color: var(--gray_00);
@@ -492,7 +501,7 @@ main .hero .scroll i {
   transform: scale(1.06);
 }
 
-.stoty_card:hover .overlay,
+.story_card:hover .overlay,
 .story_card:hover .story_band {
   opacity: 1;
 }
@@ -589,12 +598,21 @@ main .hero .scroll i {
   gap: 50px;
 }
 
+@keyframes orbit1 {
+  from { transform: rotate(0deg) scaleX(0.25); }
+  to   { transform: rotate(360deg) scaleX(0.25); }
+}
+
+@keyframes orbit2 {
+  from { transform: rotate(90deg) scaleX(0.25); }
+  to   { transform: rotate(450deg) scaleX(0.25); }
+}
+
 .banner .box01,
 .banner .box02 {
   width: 100%;
   height: 100%;
   padding: 50px;
-  border: 2px solid transparent;
   border-radius: 50%;
   aspect-ratio: 1;
   display: flex;
@@ -602,9 +620,9 @@ main .hero .scroll i {
   justify-content: center;
   align-items: center;
   gap: 24px;
+  background: #fff;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  transition: background-color .25s ease;
   position: relative;
 }
 
@@ -613,26 +631,45 @@ main .hero .scroll i {
   content: "";
   position: absolute;
   inset: -2px;
-  border: 2px solid transparent;
+  border: 2px solid var(--kd_red);
   border-radius: 50%;
-  transition: all .4s ease;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 0;
+  animation: orbit1 3s linear infinite paused;
+}
+
+.banner .box01::after,
+.banner .box02::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid rgba(239, 64, 35, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 0;
+  animation: orbit2 4.5s linear infinite paused;
 }
 
 .banner .box01:hover::before,
-.banner .box02:hover::before {
-  border-color: var(--kd_red);
-  transform: rotate(60deg) scaleX(0.5);
-}
-
-
-.banner .box01:hover::before,
-.banner .box02:hover::before {
+.banner .box02:hover::before,
+.banner .box01:hover::after,
+.banner .box02:hover::after {
   opacity: 1;
+  animation-play-state: running;
 }
 
 .banner .box01 .section_head,
 .banner .box02 .section_head {
   align-items: center;
   text-align: center;
+}
+
+.banner .btn_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }

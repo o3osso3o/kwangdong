@@ -44,7 +44,7 @@ if (video) {
   autoplay: {
     delay: 0,
     disableOnInteraction: false,
-    pauseOnmouseEnter: false, // 마우스 올려도 안 멈추게
+    pauseOnMouseEnter: false, // 마우스 올려도 안 멈추게
   },
   loopAdditionalSlides: 4, // 루프 시 빈틈 방지
   on: {
